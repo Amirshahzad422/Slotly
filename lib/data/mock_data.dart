@@ -1,0 +1,205 @@
+import '../models/provider_model.dart';
+import '../models/service_model.dart';
+
+List<ProviderModel> mockProviders = [
+  ProviderModel(
+    id: 'p1',
+    name: 'Glow Salon',
+    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=500&q=80',
+    rating: 4.8,
+    contact: '+1 (555) 234-5678',
+    bio: 'Premium hair styling, beauty treatments, and skin care services by certified professionals.',
+  ),
+  ProviderModel(
+    id: 'p2',
+    name: 'FitZone',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80',
+    rating: 4.6,
+    contact: '+1 (555) 876-5432',
+    bio: 'State-of-the-art fitness gym offering personal coaching, cardio training, and wellness classes.',
+  ),
+  ProviderModel(
+    id: 'p3',
+    name: 'HealthPlus',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80',
+    rating: 4.9,
+    contact: '+1 (555) 456-7890',
+    bio: 'Trusted healthcare clinic providing specialist consultations, health checkups, and diagnostic care.',
+  ),
+];
+
+List<ServiceModel> mockServices = [
+  // --- Salon Services (Provider: Glow Salon - p1) ---
+  ServiceModel(
+    id: 's1',
+    name: 'Express Haircut & Styling',
+    providerId: 'p1',
+    category: 'Salon',
+    price: 20.0,
+    duration: 30,
+    rating: 4.2,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['09:00 AM', '10:30 AM', '02:00 PM', '04:30 PM'],
+    description: 'Quick professional hair trimming, shaping, and basic blow-dry styling.',
+  ),
+  ServiceModel(
+    id: 's2',
+    name: 'Full Hair Coloring & Highlights',
+    providerId: 'p1',
+    category: 'Salon',
+    price: 85.0,
+    duration: 75,
+    rating: 4.7,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['11:00 AM', '01:00 PM', '03:30 PM'],
+    description: 'Vibrant custom hair coloring with balayage or foil highlights using premium organic products.',
+  ),
+  ServiceModel(
+    id: 's3',
+    name: 'Hydrating Facial Spa',
+    providerId: 'p1',
+    category: 'Salon',
+    price: 45.0,
+    duration: 45,
+    rating: 4.5,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['10:00 AM', '12:00 PM', '02:30 PM', '05:00 PM'],
+    description: 'Deep cleansing and skin hydration facial treatment leaving your skin soft and glowing.',
+  ),
+  ServiceModel(
+    id: 's4',
+    name: 'Luxury Bridal Makeup Package',
+    providerId: 'p1',
+    category: 'Salon',
+    price: 130.0,
+    duration: 120,
+    rating: 4.9,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['08:00 AM', '01:00 PM'],
+    description: 'Complete high-definition bridal makeover with hair design, contouring, and lash extensions.',
+  ),
+
+  // --- Gym Services (Provider: FitZone - p2) ---
+  ServiceModel(
+    id: 's5',
+    name: 'Day Pass & Cardio Access',
+    providerId: 'p2',
+    category: 'Gym',
+    price: 15.0,
+    duration: 120,
+    rating: 4.0,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['06:00 AM', '08:00 AM', '12:00 PM', '05:00 PM', '07:00 PM'],
+    description: 'Full day access to cardio equipment, weight room, and locker room facilities.',
+  ),
+  ServiceModel(
+    id: 's6',
+    name: '1-on-1 Personal Fitness Training',
+    providerId: 'p2',
+    category: 'Gym',
+    price: 60.0,
+    duration: 60,
+    rating: 4.8,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['07:00 AM', '09:30 AM', '04:00 PM', '06:00 PM'],
+    description: 'Customized high-intensity workout session with a certified personal trainer.',
+  ),
+  ServiceModel(
+    id: 's7',
+    name: 'Vinyasa Yoga & Mindfulness Session',
+    providerId: 'p2',
+    category: 'Gym',
+    price: 25.0,
+    duration: 50,
+    rating: 4.3,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['07:30 AM', '05:30 PM'],
+    description: 'Guided flow yoga focusing on flexibility, posture, breathing exercises, and relaxation.',
+  ),
+  ServiceModel(
+    id: 's8',
+    name: 'VIP Athletic Performance Coaching',
+    providerId: 'p2',
+    category: 'Gym',
+    price: 110.0,
+    duration: 90,
+    rating: 4.9,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['08:00 AM', '11:00 AM', '03:00 PM'],
+    description: 'Elite athletic conditioning, body composition breakdown, and personalized endurance plan.',
+  ),
+
+  // --- Clinic Services (Provider: HealthPlus - p3) ---
+  ServiceModel(
+    id: 's9',
+    name: 'General Practitioner Consultation',
+    providerId: 'p3',
+    category: 'Clinic',
+    price: 35.0,
+    duration: 30,
+    rating: 4.2,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['09:00 AM', '10:00 AM', '11:30 AM', '02:00 PM', '04:00 PM'],
+    description: 'General medical consultation, prescription check, and health advice with senior doctor.',
+  ),
+  ServiceModel(
+    id: 's10',
+    name: 'Dental Scaling & Polishing',
+    providerId: 'p3',
+    category: 'Clinic',
+    price: 70.0,
+    duration: 45,
+    rating: 4.6,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['09:30 AM', '11:00 AM', '02:30 PM'],
+    description: 'Thorough dental hygiene treatment to remove plaque, tartar, and polish teeth.',
+  ),
+  ServiceModel(
+    id: 's11',
+    name: 'Full Body Diagnostic Screening',
+    providerId: 'p3',
+    category: 'Clinic',
+    price: 120.0,
+    duration: 60,
+    rating: 4.9,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['08:30 AM', '10:30 AM'],
+    description: 'Comprehensive health check including blood panel, ECG, cholesterol, and vital analysis.',
+  ),
+  ServiceModel(
+    id: 's12',
+    name: 'Clinical Diet & Nutrition Plan',
+    providerId: 'p3',
+    category: 'Clinic',
+    price: 20.0,
+    duration: 30,
+    rating: 4.1,
+    imageUrls: [
+      'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=500&q=80',
+    ],
+    availableSlots: ['10:00 AM', '01:30 PM', '03:30 PM'],
+    description: 'Personalized meal planning and dietary assessment tailored to your wellness goals.',
+  ),
+];
