@@ -12,7 +12,7 @@ class CustomSearchBar extends StatefulWidget {
     super.key,
     this.initialValue = '',
     required this.onChanged,
-    this.hintText = 'Search services, salon, gym, clinic...',
+    this.hintText = 'Search',
     this.onFilterPressed,
     this.hasActiveFilter = false,
   });
@@ -54,17 +54,16 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
-            color: AppColors.shadowDark,
-            blurRadius: 4,
-            spreadRadius: 1,
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
-        border: Border.all(color: AppColors.borderLight.withValues(alpha: 0.8), width: 0.8),
+        border: Border.all(color: AppColors.border.withValues(alpha: 0.6), width: 1),
       ),
       child: Row(
         children: [
-          const Icon(Icons.search_rounded, color: AppColors.iconPrimary, size: 22),
+          const Icon(Icons.search_rounded, color: AppColors.textSecondary, size: 22),
           const SizedBox(width: 10),
           Expanded(
             child: TextField(
@@ -73,7 +72,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               style: const TextStyle(fontSize: 14, color: AppColors.textPrimary),
               decoration: InputDecoration(
                 hintText: widget.hintText,
-                hintStyle: const TextStyle(color: AppColors.textLight, fontSize: 13),
+                hintStyle: const TextStyle(color: AppColors.textLight, fontSize: 14),
                 border: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -102,23 +101,13 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                   Container(
                     padding: const EdgeInsets.all(9),
                     decoration: BoxDecoration(
-                      color: widget.hasActiveFilter
-                          ? AppColors.textPrimary
-                          : AppColors.primaryBackground,
+                      color: widget.hasActiveFilter ? AppColors.darkPill : AppColors.background,
                       shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.shadowDark,
-                          blurRadius: 4,
-                          spreadRadius: 0.5,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
                     ),
                     child: Icon(
                       Icons.tune_rounded,
-                      color: widget.hasActiveFilter ? Colors.white : AppColors.iconPrimary,
-                      size: 16,
+                      color: widget.hasActiveFilter ? Colors.white : AppColors.textPrimary,
+                      size: 18,
                     ),
                   ),
                   if (widget.hasActiveFilter)
@@ -129,7 +118,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                         width: 8,
                         height: 8,
                         decoration: const BoxDecoration(
-                          color: Colors.amber,
+                          color: AppColors.primary,
                           shape: BoxShape.circle,
                         ),
                       ),

@@ -1,5 +1,5 @@
 name: slotly
-description: "A new Flutter project."
+description: "A modern responsive Slotly booking & appointment application frontend."
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -14,6 +14,7 @@ dependencies:
   riverpod_annotation: ^2.3.0
   cupertino_icons: ^1.0.8
   url_strategy: ^0.3.0
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -22,4 +23,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-

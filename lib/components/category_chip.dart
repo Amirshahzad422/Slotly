@@ -21,13 +21,16 @@ class CategoryPill extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF1E1E1E) : const Color(0xFFECEFF1),
+          color: isSelected ? AppColors.darkPill : Colors.white,
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: AppColors.borderLight, width: 1.5),
+          border: Border.all(
+            color: isSelected ? AppColors.darkPill : AppColors.border,
+            width: 1.5,
+          ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.shadowDark,
-              blurRadius: 4,
+              color: Colors.black.withValues(alpha: 0.04),
+              blurRadius: 6,
               spreadRadius: 0.5,
               offset: const Offset(0, 3),
             ),
@@ -37,7 +40,7 @@ class CategoryPill extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: 14,
-            fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+            fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
             color: isSelected ? Colors.white : AppColors.textPrimary,
           ),
         ),
